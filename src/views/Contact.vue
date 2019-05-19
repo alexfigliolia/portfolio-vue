@@ -1,5 +1,8 @@
 <template>
-  <section id="contact" :class="[classes]">
+  <section id="contact" :class="[classes]" :style="{
+		'backgroundPosition': moveX ? `${moveX}% 100%` : '50% 100%',
+		'transition': `background-position ${transDur} 0s, transform 0.5s 0s`
+	}">
 		<BackgroundText text="Alex" />
 		<BackgroundText text="Figliolia" />
 		<div>
@@ -45,6 +48,17 @@
 				classes: 'home contact'
 			}
 		},
+		computed: {
+			moveX() {
+				return this.$store.state.moveX;
+			},
+			transDur() {
+				return this.$store.state.transDur;
+			},
+			mounts() {
+				return this.$store.state.mounts;
+			}
+		},
 		methods: {
 			github: function() {
 				window.open('https://github.com/alexfigliolia', '_blank');
@@ -65,6 +79,7 @@
 	        dropRadius: 10, 
 	        perturbance: 0.02,
 	    	});
+	    	if(this.mounts === 0) this.$store.commit('updateMounts');
 		  });
 		},
 		beforeDestroy: function() {

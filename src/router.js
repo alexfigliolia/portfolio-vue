@@ -14,18 +14,12 @@ export default new Router({
     {
       path: '/work',
       name: 'work',
-      // route level code-splitting
-      // this generates a separate chunk (work.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "work" */ './views/Work.vue')
+      component: () => import('./views/Work.vue')
     },
     {
       path: '/contact',
       name: 'contact',
-      // route level code-splitting
-      // this generates a separate chunk (work.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "work" */ './views/Contact.vue')
+      component: () => import('./views/Contact.vue')
     }
   ]
 })

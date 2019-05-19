@@ -192,7 +192,6 @@
 			text-transform: uppercase;
 			position: relative;
 			@include center;
-			transition: transform 0.5s 0s, box-shadow 0.5s 0.1s;
 			user-select: none;
 			@media #{$mq-670} {
 				width: 140px;

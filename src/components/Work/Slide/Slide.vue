@@ -1,6 +1,6 @@
 <template>
 	<div
-		:class="[selectedIndex === index ? 'project is-selected' : 'project']"
+		:class="[selectedIndex === index && pageLoaded ? 'project is-selected' : 'project']"
     id="slide"
 		:style="{ 'height': height + 'px', 'width': width + 'px' }"
     ref="slide">
@@ -86,7 +86,10 @@
 	    },
 	    img() {
 	    	return this.$store.state.width >= 670 ? this.api.imgLarge : this.api.imgSmall
-	    }
+	    },
+      pageLoaded() {
+        return this.$store.state.appClasses === 'App';
+      }
 	  },
     methods: {
       switchText: function() {

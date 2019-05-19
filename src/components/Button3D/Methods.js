@@ -1,6 +1,6 @@
 
 export default class ButtonMethods {
-	constructor(props) {
+	constructor() {
 	  this.data = {
 			rotX: 0,
 			rotY: 0,
@@ -56,7 +56,7 @@ export default class ButtonMethods {
 		this.data.rotX = rotX;
 		this.data.rotY = rotY; 
 		this.data.bTransDur = `${duration}s`, 
-		this.scale = 1.1;
+		this.data.scale = 1.1;
 		this.data.boxShadow = `0 14px 28px rgba(0,0,0,0.5), ${rotY* -1.85}px ${rotX}px 10px rgba(0,0,0,0.44)`;
 	}
 
@@ -68,7 +68,7 @@ export default class ButtonMethods {
 			), 0.5);
 	}
 
-	mouseMove({ type, clientX, clientY, target, touches }) {
+	mouseMove({ type, clientX, clientY, touches }) {
 		this.setFrame(
 			this.getRotations(
 				this.getType(type, touches, clientX, clientY)

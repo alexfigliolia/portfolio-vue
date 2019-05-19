@@ -1,12 +1,16 @@
 <template>
-  <section id="home" :class="[classes]">
+  <section id="home" :class="[classes]" :style="{
+		'backgroundPosition': moveX ? `${moveX}% 100%` : '50% 100%',
+		'transition': `background-position ${transDur} 0s, transform 0.5s 0s`
+	}">
 		<BackgroundText text="Alex" />
 		<BackgroundText text="Figliolia" />
 		<div>
 			<IntroText />
 			<Button3D 
 				text="Work"
-				@click="nav" />
+				@click="nav"
+				url='work' />
 		</div>
 	</section>
 </template>
@@ -25,20 +29,33 @@
 				classes: 'home'
 			}
 		},
+		computed: {
+			moveX() {
+				return this.$store.state.moveX;
+			},
+			transDur() {
+				return this.$store.state.transDur;
+			},
+			mounts() {
+				return this.$store.state.mounts;
+			}
+		},
 		components: {
 			IntroText,
 			Button3D,
 			BackgroundText
 		},
 		methods: {
-			nav: function() {
-				this.$router.push('work');
+			nav({ target: { dataset: { page }}}) {
+				this.$store.commit('navigate', { page, router: this.$router });
 			}
 		},
 		mounted: function () {
 		  this.$nextTick(function () {
-		  	setTimeout(() => { this.classes = 'home home-show' }, 1000);
-    		setTimeout(() => { this.classes = 'home home-show home-reset-delays' }, 1500);
+		  	const delay = this.mounts === 0 ? 2000 : 1000;
+		  	setTimeout(() => { this.classes = 'home home-show' }, delay);
+    		setTimeout(() => { this.classes = 'home home-show home-reset-delays' }, delay + 500);
+    		if(this.mounts === 0) this.$store.commit('updateMounts');
 			  $('#home').ripples({
 	        resolution: 512,
 	        dropRadius: 10, 

@@ -91,9 +91,7 @@
       });
 		},
 		updated: function() {
-			this.$nextTick(function() {
-				this.pw.setTransition(this.width > 957 ? 'flip3d' : 'flip3dY'); 
-      });
+			this.pw.setTransition(this.width >= 957 ? 'flip3d' : 'flip3dY'); 
 		}
 	}
 </script>

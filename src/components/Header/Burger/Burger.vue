@@ -1,6 +1,8 @@
 <template>
-	<div id="burg">
-    <div id="hamburger" class="hamburglar is-open">
+	<div 
+    id="burg"
+    v-on:click="openMenu">
+    <div id="hamburger" class="hamburglar" :class="{ 'is-open': !menuOpen, 'is-closed': menuOpen}">
       <div id="top"></div>
       <svg 
         id="svb" 
@@ -22,3 +24,19 @@
     </div>
   </div>
 </template>
+
+<script>
+  export default { 
+    name: 'Burger',
+    computed: {
+      menuOpen() {
+        return this.$store.state.menuOpen;
+      },
+    },
+    methods: {
+      openMenu: function() {
+        this.$store.commit('toggleMenu');
+      }
+    }
+  }
+</script>

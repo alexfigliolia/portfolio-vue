@@ -18,7 +18,7 @@
 	  },
 	  methods: {
 	  	nav: function() {
-	  		this.$router.push('/');
+	  		this.$store.commit('navigate', { page: '/', router: this.$router });
 	  	}
 	  }
 	}

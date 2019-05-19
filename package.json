@@ -9,7 +9,10 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "jquery": "^3.4.1",
+    "pageswitch": "^2.3.2",
     "register-service-worker": "^1.6.2",
+    "ripples": "https://github.com/alexfigliolia/jquery.ripples.git",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"

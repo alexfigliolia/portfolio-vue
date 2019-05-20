@@ -1,10 +1,10 @@
 <template>
   <div id="app" :class="[appClasses]">
-    <div class="app-inner">
-      <div class='back'>
+    <div class="app-inner" :style="{ 'height': height + 'px', 'width': width + 'px' }">
+      <div class='back' :style="{ 'height': height + 'px', 'width': width + 'px' }">
         <Loader />
       </div>
-      <div class='front'>  
+      <div class='front' :style="{ 'height': height + 'px', 'width': width + 'px' }">  
         <Header />
         <Menu />
         <router-view />
@@ -40,6 +40,9 @@
       },
       width() {
         return this.$store.state.width;
+      },
+      height() {
+        return this.$store.state.height;
       }
     },
     methods: {

@@ -1,6 +1,6 @@
 <template>
 	<div 
-		class="link"
+		:class="[onPage ? 'link on-page' : 'link']"
 		v-on:click="$emit('nav', $event)" 
 		:data-page="url">
 		<div
@@ -24,6 +24,11 @@
 <script>
 	export default {
 		name: 'Link',
-		props: ['pageTo', 'nav', 'menuClasses', 'url']
+		props: ['pageTo', 'nav', 'menuClasses', 'url'],
+		data() {
+			return {
+				onPage: this.$router.history.current.fullPath === this.url,
+			}
+		}
 	}
 </script>

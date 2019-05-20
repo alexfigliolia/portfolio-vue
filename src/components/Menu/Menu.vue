@@ -10,12 +10,12 @@
 			<Link 
 				:menuClasses="menuOpen ? 'menu menu-show' : 'menu'"
 				pageTo="Work"
-				url="work"
+				url="/work"
 				@nav="nav" />
 			<Link 
 				:menuClasses="menuOpen ? 'menu menu-show' : 'menu'"
 				pageTo="Contact"
-				url="contact"
+				url="/contact"
 				@nav="nav" />
 		</div>
 	</section>

@@ -12,7 +12,7 @@
             r="20" 
             fill="none" 
             stroke="#fff"
-            strokeWidth="2" 
+            stroke-width="2" 
             strokeMiterlimit="10" />
         </svg>
       </div>

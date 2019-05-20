@@ -72,8 +72,8 @@ self.__precacheManifest = [
     "url": "/portfolio-vue/img/tree-small.85bbbb3f.jpg"
   },
   {
-    "revision": "d16d2c4022be4c5f842b",
-    "url": "/portfolio-vue/js/app.060a3597.js"
+    "revision": "4d6750bcf74367f207fb",
+    "url": "/portfolio-vue/js/app.c5ee6e29.js"
   },
   {
     "revision": "32043c9e894528c6f60c",
@@ -140,11 +140,11 @@ self.__precacheManifest = [
     "url": "/portfolio-vue/img/skedge-small.fc733006.jpg"
   },
   {
-    "revision": "720c8cb9e8a490b012bb665c196b0680",
+    "revision": "87a9d7b0cbf7c01df446973a97cf678a",
     "url": "/portfolio-vue/index.html"
   },
   {
-    "revision": "d16d2c4022be4c5f842b",
+    "revision": "4d6750bcf74367f207fb",
     "url": "/portfolio-vue/css/app.a226d959.css"
   }
 ];
